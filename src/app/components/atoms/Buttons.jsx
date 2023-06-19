@@ -3,7 +3,7 @@ const Buttons = ({ children, className, type }) => {
   switch (type) {
     case "filled":
       return (
-        <div className="bg-[#4CA456] px-10 py-2 text-white inline-flex items-center justify-center rounded-lg">
+        <div className="bg-[#4CA456] px-10 py-2 text-white inline-flex items-center justify-center rounded-lg text-sm md:text-lg">
           {children}
         </div>
       );

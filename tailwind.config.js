@@ -24,8 +24,8 @@ module.exports = {
       },
     },
     backgroundImage: {
-      cat: "url('/assets/cat.jpg')",
-    
+      backgroundImage: "url('/assets/heroImage.webp')",
+      loginImage: "url('/assets/loginImage.avif')",
     },
   },
   plugins: [],

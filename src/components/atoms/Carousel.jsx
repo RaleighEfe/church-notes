@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CropText from "../CropText";
+import CropText from "./CropText";
 import Link from "next/link";
 
 const Carousel = ({ cards }) => {

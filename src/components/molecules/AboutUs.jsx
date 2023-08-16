@@ -1,5 +1,6 @@
 import Buttons from "../atoms/Buttons";
 import Layout from "../atoms/Layout";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -16,8 +17,10 @@ const AboutUs = () => {
         Asperiores, corporis reiciendis pariatur ducimus provident dolore.
         Cumque porro eum beatae facilis nobis! Autem, ipsa ducimus.
       </p>
-      <div className=" mt-10 grid justify-center items-center">
-        <Buttons type="filled">Explore Church Notes</Buttons>
+      <div className=" my-10 grid justify-center items-center">
+        <Link href="/nopage/" className="bg-[#4f7942] px-10 py-2 text-white inline-flex items-center justify-center rounded-lg text-sm md:text-lg">
+          Explore Church Notes
+        </Link>
       </div>
     </Layout>
   );

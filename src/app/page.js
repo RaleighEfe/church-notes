@@ -1,15 +1,22 @@
-import Image from "next/image";
-import Buttons from "./components/atoms/Buttons";
-import Cards from "./components/atoms/Cards";
-import HeroSection from "./components/molecules/HeroSection";
-import AboutUs from "./components/molecules/AboutUs";
+import Cards from "../components/atoms/Cards";
+import HeroSection from "../components/molecules/HeroSection";
+import AboutUs from "../components/molecules/AboutUs";
+import Footer from "../components/molecules/Footer";
+import SingleBook from "./books/[slug]/page";
+import RegisterPage from "./register/page";
+import LoginPage from "./login/page";
+import NoPage from "./nopage/page";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
       <AboutUs />
-      <Cards />
+      <Cards header="Trending" />
+      <Footer />
+      {/* <RegisterPage /> */}
+      {/* <LoginPage /> */}
+      {/* <NoPage /> */}
     </div>
   );
 }

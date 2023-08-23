@@ -2,43 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 const LoginPage = () => {
   return (
-    <div className="bg-registerImage bg-cover bg-center items-center justify-center h-screen">
-      <div className="bg-white bg-opacity-50 md:mx-32 px-3 py-16 md:py-16">
-        <h3 className="mb-4 text-2xl sm:text-3xl items-center justify-center">
-          Login to ChurchNote
-        </h3>
-        <div className="text-base sm:text-xl grid mt-10 content-end lg:w-3/4">
-          <input
-            type="email"
-            inputMode="email"
-            placeholder="Enter your email"
-            className="h-10 rounded-md p-2"
-          />
-          <input
-            type="password"
-            inputMode="password"
-            placeholder="Enter your password"
-            className="h-10 rounded-md my-3 p-2"
-          />
+    <div className="bg-loginImage bg-cover bg-center h-screen p-4 grid items-center">
+      <div className="grid items-center bg-black/70 md:p-4 w-full max-w-2xl mx-auto">
+        <div className="grid grid-rows_[min-content] gap-6 h-fit p-4">
+          <h3 className="block text-white text-3xl text-center font-semibold">
+            Login to ChurchNote
+          </h3>
 
-          <Link href="/register/" className="text-[#4f7942]">
-            Do not have an account? Register
-          </Link>
-        </div>
-        <hr className="my-6"></hr>
-        <div className="text-base sm:text-xl grid lg:w-3/4 text-center">
-          <Link
-            href=""
-            className="h-10 rounded-md p-2 my-3 bg-[#4f7942] text-white"
-          >
-            Register with Google
-          </Link>
-          <Link
-            href=""
-            className="h-10 rounded-md p-2 border border-[#4f7942] text-[#4f7942]"
-          >
-            Register with Instagram
-          </Link>
+          <form>
+            <div className="grid gap-4 w-full">
+              <div className="block w-full h-fit p-4 bg-white/70 border-2 focus-within:border-red-400 rounded-md">
+                <input
+                  type="email"
+                  inputMode="email" 
+                  placeholder="Enter your email"
+                  className="w-full bg-transparent outline-none"
+                />
+              </div>
+              <div className="block w-full h-fit p-4 bg-white/70 border-2 focus-within:border-red-400 rounded-md">
+                <input
+                  type="password"
+                  inputMode="password"
+                  placeholder="Enter your password"
+                  className="w-full bg-transparent outline-none"
+                />
+              </div>
+            </div>
+          </form>
+          <div className="text-base sm:text-xl grid content-end lg:w-3/4">
+            <Link
+              href="/register/"
+              className="text-gray-200 text-sm md:text-base"
+            >
+              Already have an account? register
+            </Link>
+          </div>
         </div>
       </div>
     </div>

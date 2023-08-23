@@ -18,9 +18,9 @@ const AboutUs = () => {
         Cumque porro eum beatae facilis nobis! Autem, ipsa ducimus.
       </p>
       <div className=" my-10 grid justify-center items-center">
-        <Link href="/nopage/" className="bg-[#4f7942] px-10 py-2 text-white inline-flex items-center justify-center rounded-lg text-sm md:text-lg">
-          Explore Church Notes
-        </Link>
+        <Buttons type="filled" href="/nopage/">
+          Explore Book Closet
+        </Buttons>
       </div>
     </Layout>
   );

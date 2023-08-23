@@ -3,27 +3,24 @@ import classNames from "classnames";
 import Buttons from "../atoms/Buttons";
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "../atoms/Logo";
 
 const HeroSection = () => {
   return (
-    <div className="bg-cover  bg-center items-center justify-center bg-backgroundImage brightness-50">
-      <div className="text-white text-xl pb-10">
+    <div className="bg-cover bg-backgroundImage">
+      <div className="text-white text-xl pb-10  bg-black/70">
         <div className="flex flex-row p-3 w-full items-center justify-between">
-          <div>Logo</div>
-          <Link
-            href="/login/"
-            className=" py-2 px-5 border border-white rounded-md text-white inline-flex items-center justify-center text-xs"
-          >
-            LOG IN
-          </Link>
+          {/* <div>Logo</div> */}
+          <Logo />
+          <Buttons type="white-outline" href="/login/">LOG IN</Buttons>
         </div>
         <div className="text-center my-28">
           <h1 className="text-2xl lg:text-4xl mb-5 font-light">
-            Welcome to the Church Notes
+            Welcome to the BookCloset
           </h1>
           <p className="text-xs md:text-base font-semibold pb-10">
-            church notes provides users with a variety of media <br></br> I dont
-            know what else to write
+            book closet provides users with a variety of<br></br>
+            audiobooks and ebooks
           </p>
           <Link
             href="/register/"

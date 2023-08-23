@@ -1,8 +1,16 @@
+"use client";
 import Link from "next/link";
 import { ImBooks } from "react-icons/im";
 import CropText from "../../components/atoms/CropText";
 import Header from "@/components/molecules/Header";
 
+// const GetAllBooks = async () => {
+//   const res = await fetch(
+//     "https://api.nytimes.com/svc/books/v3/lists/full-overview.json"
+//   );
+
+//   return res.json();
+// };
 const AllBooks = ({ image, type, title, author }) => {
   const schema = [
     {
@@ -102,15 +110,17 @@ const AllBooks = ({ image, type, title, author }) => {
       author: "Lorel Mines",
     },
   ];
+  // const books = GetAllBooks();
+  // console.log("books");
   return (
     <div>
       <Header />
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 items-center p-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 place-self-center p-3">
         {schema.map((data, i) => (
           <Link
             key={i}
             href="/books/1"
-            className="flex flex-col border border-[#48494B] rounded-md h-48 w-32 md:h-56 md:w-48"
+            className="flex flex-col border border-[#48494B] rounded-md h-56 md:h-64"
           >
             <div className="h-full">{data.image}</div>
             <div className="grid content-end p-2">
@@ -119,7 +129,8 @@ const AllBooks = ({ image, type, title, author }) => {
                 <p className="font-light">{data.type}</p>
               </div>
               <h4 className="font-semibold text-sm">
-                <CropText text={data.title} />
+                {/* <CropText text={data.title} /> */}
+                {data.title}
               </h4>
               <p className="text-xs">{data.author}</p>
             </div>

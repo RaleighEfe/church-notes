@@ -1,23 +1,42 @@
-const Buttons = ({ children, className, type }) => {
+import Link from "next/link";
+const Buttons = ({ children, type, href = "" }) => {
   //   {
   switch (type) {
     case "filled":
       return (
-        <button className="bg-[#4f7942] px-10 py-2 text-white inline-flex items-center justify-center rounded-lg text-sm md:text-lg">
+        <Link
+          href={href}
+          className="bg-[#4f7942] px-10 py-2 text-white text-center rounded-lg text-sm md:text-lg"
+        >
           {children}
-        </button>
+        </Link>
       );
     case "white-outline":
       return (
-        <button className=" py-2 px-5 border border-white rounded-md text-white inline-flex items-center justify-center text-xs">
+        <Link
+          href={href}
+          className=" py-2 px-5 border border-white rounded-md text-white text-center text-xs"
+        >
           {children}
-        </button>
+        </Link>
       );
     case "large-outline":
       return (
-        <button className="border border-[#4f7942] px-5 py-2 text-white inline-flex items-center justify-center rounded-lg">
+        <Link
+          href={href}
+          className="border border-[#4f7942] px-5 py-2 text-white inline-flex rounded-lg"
+        >
           {children}
-        </button>
+        </Link>
+      );
+    case "outline":
+      return (
+        <Link
+          href={href}
+          className=" py-2 px-3 border border-[#4f7942] rounded-md text-[#4f7942]"
+        >
+          {children}
+        </Link>
       );
     default:
       return <button>select a button type</button>;

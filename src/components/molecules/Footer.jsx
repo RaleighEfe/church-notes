@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "../atoms/Logo";
 import { BsLinkedin, BsGithub, BsMedium, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
@@ -6,7 +7,9 @@ const Footer = () => {
     <footer className="grid gap-3 md:gap-11 text-white p-3 bg-[#4f7942]">
       <div className="grid  md:grid-cols-3">
         <div className="text-2xl font-bold">ChurchNotes</div>
-        <div className="justify-self-start md:justify-self-center">Logo</div>
+        <div className="justify-self-start md:justify-self-center">
+          <Logo />
+        </div>
         <div className="flex gap-5 justify-self-start md:justify-self-end">
           <Link href="https://twitter.com/EfeRaleigh">
             <BsTwitter />

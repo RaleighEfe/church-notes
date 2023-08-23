@@ -26,7 +26,7 @@ module.exports = {
     backgroundImage: {
       backgroundImage: "url('/assets/heroImage.webp')",
       loginImage: "url('/assets/loginImage.avif')",
-      testImage: "url('/assets/cat.JPG')",
+      // testImage: "url('/assets/cat.JPG')",
       readBooks: "url('/assets/readBooks.jpg')",
       registerImage: "url('/assets/registerImage.jpg')",
     },

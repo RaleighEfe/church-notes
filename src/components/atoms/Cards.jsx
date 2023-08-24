@@ -6,7 +6,7 @@ import { ImBooks } from "react-icons/im";
 import React, { useState } from "react";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import { useRef } from "react";
-import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Cards = ({ image, type, title, author, header }) => {
   const scroll = useRef();
@@ -22,19 +22,19 @@ const Cards = ({ image, type, title, author, header }) => {
 
   const schema = [
     {
-      image: "/assets/cat.JPG",
+      image: "/assets/readBooks.jpg",
       type: "Audiobook",
       title: "A snitch in Time saved nine times you are",
       author: "Lorel Mines",
     },
     {
-      image: "/assets/cat.jpg",
+      image: "/assets/loginImage.avif",
       type: "Audiobook",
       title: "Bora Bora",
       author: "Lorel Mines",
     },
     {
-      image: "/assets/cat.jpg",
+      image: "/assets/registerImage.jpg",
       type: "Audiobook",
       title: "Packeages for all your friends ",
       author: "Lorel Mines",
@@ -117,6 +117,12 @@ const Cards = ({ image, type, title, author, header }) => {
       title: "Chasing Red",
       author: "Lorel Mines",
     },
+    {
+      image: "/assets/cat.jpg",
+      type: "Audiobook",
+      title: "Red Rising",
+      author: "Lorel Mines",
+    },
   ];
 
   return (
@@ -138,23 +144,30 @@ const Cards = ({ image, type, title, author, header }) => {
         </div>
       </div>
       <hr className="text-[#48494B] my-3"></hr>
-      <div className="flex gap-3 overflow-hidden" ref={scroll}>
+      <div
+        className="flex gap-3 scroll_bar_hide overflow-x-scroll"
+        ref={scroll}
+      >
         {schema.map((data, i) => (
-          <Link
-            key={i}
-            href="/books/1"
-            className="flex flex-col border border-[#48494B] rounded-md h-48 w-32 md:h-56 md:w-48"
-          >
-            <div className="h-full">{data.image}</div>
-            <div className="grid content-end p-2">
-              <div className="flex text-xs gap-1">
-                <ImBooks />
-                <p className="font-light">{data.type}</p>
+          <Link key={i} href="/books/1">
+            <div className="grid grid-rows-[1fr_0.5fr_auto] w-40 border border-[#48494B] rounded-md">
+              <div className="relative h-40 w-full">
+                <Image src={data.image} alt={data.title} fill />
               </div>
-              <h4 className="font-semibold text-sm">
-                <CropText text={data.title} />
-              </h4>
-              <p className="text-xs">{data.author}</p>
+
+              <div className="px-2 pt-2">
+                <div className="flex text-xs gap-1">
+                  <ImBooks />
+                  <p className="font-light">{data.type}</p>
+                </div>
+                <h4 className="font-semibold text-sm">
+                  <CropText text={data.title} />
+                </h4>
+              </div>
+
+              <div className="self-start px-2">
+                <p className="text-sm">{data.author}</p>
+              </div>
             </div>
           </Link>
         ))}

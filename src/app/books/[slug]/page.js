@@ -40,6 +40,7 @@ const SingleBook = () => {
           <h3 className="text-xl md:text-2xl font-semibold pb-3">Comments</h3>
         </div>
       </div>
+      
     </div>
   );
 };

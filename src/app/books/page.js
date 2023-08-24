@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ImBooks } from "react-icons/im";
 import CropText from "../../components/atoms/CropText";
 import Header from "@/components/molecules/Header";
+import Image from "next/image";
+import Footer from "@/components/molecules/Footer";
 
 // const GetAllBooks = async () => {
 //   const res = await fetch(
@@ -14,7 +16,7 @@ import Header from "@/components/molecules/Header";
 const AllBooks = ({ image, type, title, author }) => {
   const schema = [
     {
-      image: "",
+      image: "/assets/cat.jpg",
       type: "Audiobook",
       title: "A snitch in Time saved nine times you are",
       author: "Lorel Mines",
@@ -28,7 +30,7 @@ const AllBooks = ({ image, type, title, author }) => {
     {
       image: "/assets/cat.jpg",
       type: "Audiobook",
-      title: "Packeages for all your friends ",
+      title: "Packages for all your friends ",
       author: "Lorel Mines",
     },
     {
@@ -100,7 +102,7 @@ const AllBooks = ({ image, type, title, author }) => {
     {
       image: "/assets/cat.jpg",
       type: "Audiobook",
-      title: "The invincible life oof addie larue",
+      title: "The invincible life of addie larue",
       author: "Lorel Mines",
     },
     {
@@ -115,28 +117,34 @@ const AllBooks = ({ image, type, title, author }) => {
   return (
     <div>
       <Header />
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 place-self-center p-3">
-        {schema.map((data, i) => (
-          <Link
-            key={i}
-            href="/books/1"
-            className="flex flex-col border border-[#48494B] rounded-md h-56 md:h-64"
-          >
-            <div className="h-full">{data.image}</div>
-            <div className="grid content-end p-2">
-              <div className="flex text-xs gap-1">
-                <ImBooks />
-                <p className="font-light">{data.type}</p>
+      <div className="grid ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-y-3 p-3 justify-items-center">
+          {schema.map((data, i) => (
+            <Link key={i} href="/books/1">
+              <div className="grid grid-rows-[1fr_0.5fr_auto] w-40 border border-[#48494B] rounded-md">
+                <div className="relative h-40 w-full">
+                  <Image src={data.image} alt={data.title} fill />
+                </div>
+
+                <div className="px-2 pt-2">
+                  <div className="flex text-xs gap-1">
+                    <ImBooks />
+                    <p className="font-light">{data.type}</p>
+                  </div>
+                  <h4 className="font-semibold text-sm">
+                    <CropText text={data.title} />
+                  </h4>
+                </div>
+
+                <div className="self-start px-2">
+                  <p className="text-xs">{data.author}</p>
+                </div>
               </div>
-              <h4 className="font-semibold text-sm">
-                {/* <CropText text={data.title} /> */}
-                {data.title}
-              </h4>
-              <p className="text-xs">{data.author}</p>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
+      {/* <Footer /> */}
     </div>
   );
 };

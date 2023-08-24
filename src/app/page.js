@@ -13,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <Cards header="Trending" />
+      <Cards header="Historical" />
       <Footer />
       {/* <RegisterPage /> */}
       {/* <LoginPage /> */}

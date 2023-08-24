@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <Layout>
       <h3 className="mb-4 text-2xl sm:text-3xl">About Us</h3>
-      <p className="text-base sm:text-xl">
+      <p className="text-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid
         sequi labore exercitationem voluptas, incidunt vel earum nesciunt quis
         ex porro assumenda laudantium maiores praesentium dolores eius quo
@@ -18,9 +18,12 @@ const AboutUs = () => {
         Cumque porro eum beatae facilis nobis! Autem, ipsa ducimus.
       </p>
       <div className=" my-10 grid justify-center items-center">
-        <Buttons type="filled" href="/nopage/">
+        <Link
+          href="/nopage/"
+          className="bg-[#4f7942] px-10 py-2 text-white inline-flex items-center justify-center rounded-lg text-lg"
+        >
           Explore Book Closet
-        </Buttons>
+        </Link>
       </div>
     </Layout>
   );

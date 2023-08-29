@@ -17,10 +17,10 @@ const HeroSection = () => {
           </Buttons>
         </div>
         <div className="text-center my-28">
-          <h1 className="text-2xl lg:text-4xl mb-5 font-light">
+          <h1 className="text-2xl lg:text-4xl mb-5 font-light font-semibold ">
             Welcome to the BookCloset
           </h1>
-          <p className="text-lg font-semibold pb-10">
+          <p className="text-lg pb-10">
             book closet provides users with a variety of<br></br>
             audiobooks and ebooks
           </p>

@@ -14,7 +14,7 @@ export default function Home() {
       <AboutUs />
       <Cards header="Trending" />
       <Cards header="Historical" />
-      <Footer />
+
       {/* <RegisterPage /> */}
       {/* <LoginPage /> */}
       {/* <NoPage /> */}

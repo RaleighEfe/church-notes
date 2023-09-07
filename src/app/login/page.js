@@ -1,32 +1,53 @@
+"use client";
+import Buttons from "@/components/atoms/Buttons";
+import Input from "@/components/atoms/Input";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import auth from "../../database/services/auth";
+
 const LoginPage = () => {
+  const [user, setUser] = useState({ username: "", password: "" });
+  // const router = useRouter();
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const user = await auth.signIn();
+    console.log(user);
+  };
   return (
     <div className="bg-loginImage bg-cover bg-center h-screen p-4 grid items-center">
       <div className="grid items-center bg-black/70 md:p-4 w-full max-w-2xl mx-auto">
         <div className="grid grid-rows_[min-content] gap-6 h-fit p-4">
           <h3 className="block text-white text-3xl text-center font-semibold">
-            Login to ChurchNote
+            Login to Book Closet
           </h3>
 
-          <form>
+          <form onSubmit={onSubmit}>
             <div className="grid gap-4 w-full">
-              <div className="block w-full h-fit p-4 bg-white/70 border-2 focus-within:border-red-400 rounded-md">
-                <input
-                  type="email"
-                  inputMode="email" 
-                  placeholder="Enter your email"
-                  className="w-full bg-transparent outline-none"
-                />
-              </div>
-              <div className="block w-full h-fit p-4 bg-white/70 border-2 focus-within:border-red-400 rounded-md">
-                <input
-                  type="password"
-                  inputMode="password"
-                  placeholder="Enter your password"
-                  className="w-full bg-transparent outline-none"
-                />
-              </div>
+              <Input
+                type="email"
+                inputMode="email"
+                placeholder="Enter your email"
+                onChange={(event) =>
+                  setUser({ ...user, username: event.target.value })
+                }
+              />
+              <Input
+                type="password"
+                inputMode="password"
+                placeholder="Enter your password"
+                onChange={(event) =>
+                  setUser({ ...user, password: event.target.value })
+                }
+              />
+              <button
+                className="bg-[#4f7942] px-10 py-2 text-white text-center rounded-lg text-sm md:text-lg"
+                // onClick={() => router.push("/login")}s
+              >
+                Log in to Blook Closet
+              </button>
+              {/* <Buttons type="filled"></Buttons> */}
             </div>
           </form>
           <div className="text-base sm:text-xl grid content-end lg:w-3/4">

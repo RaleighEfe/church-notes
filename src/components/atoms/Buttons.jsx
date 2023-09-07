@@ -9,6 +9,7 @@ const Buttons = ({ children, type, href = "" }) => {
           className="bg-[#4f7942] px-10 py-2 text-white text-center rounded-lg text-sm md:text-lg"
         >
           {children}
+          
         </Link>
       );
     case "white-outline":

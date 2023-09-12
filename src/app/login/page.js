@@ -1,18 +1,18 @@
 "use client";
-import Buttons from "@/components/atoms/Buttons";
 import Input from "@/components/atoms/Input";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import auth from "../../database/services/auth";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const [user, setUser] = useState({ username: "", password: "" });
-  // const router = useRouter();
+  const router = useRouter();
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const user = await auth.signIn();
+    const user_data = await auth.signIn(user);
+    router.push("/dashboard");
     console.log(user);
   };
   return (

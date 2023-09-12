@@ -13,11 +13,7 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <Cards header="Trending" />
-      <Cards header="Historical" />
-
-      {/* <RegisterPage /> */}
-      {/* <LoginPage /> */}
-      {/* <NoPage /> */}
+      <Cards header="Historical" /> 
     </div>
   );
 }

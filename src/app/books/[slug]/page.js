@@ -37,7 +37,7 @@ const SingleBook = () => {
           Cumque porro eum beatae facilis nobis! Autem, ipsa ducimus.
         </p>
         <div>
-          <h3 className="text-xl md:text-2xl font-semibold pb-3">Comments</h3>
+          <h3 className="text-xl md:text-2xl font-semibold pb-3">Comments...</h3>
         </div>
       </div>
       

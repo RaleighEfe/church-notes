@@ -29,20 +29,14 @@ const signInWithGoogle = async () => {
 };
 
 // SignIn
-const signIn = async () => {
+const signIn = async (user) => {
   const userSignIn = await signInWithEmailAndPassword(
     auth,
     user.username,
     user.password
-  ).then((userCredential) => {
-    // Signed in
-    router.push("/dashboard");
-  });
+  );
+
   return userSignIn;
-  //   .then((userCredential) => {
-  //     // Signed in
-  //     router.push("/dashboard");
-  //   });
 };
 
 // user Authorization

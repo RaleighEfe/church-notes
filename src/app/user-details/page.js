@@ -4,22 +4,19 @@ import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 
-function AllBooks() {
+const UserDetails = () => {
   const data = [
     {
-      title: "A snitch in Time saved nine times you are",
-      author: "Lorel Mines",
-      genre: "Historical",
+      email: "lorelmines@gmail.com",
+      subscription: "Historical",
     },
     {
-      title: "Forth wing",
-      author: "Rebecca York",
-      genre: "Sci-fi",
+      email: "rebeccayork@gmail.com",
+      subscription: "Sci-fi",
     },
     {
-      title: "Loyal friends",
-      author: "Lorralee Hides",
-      genre: "Romance",
+      email: "lorraleehides@yahoo.com",
+      subscription: "Romance",
     },
   ];
   return (
@@ -41,10 +38,12 @@ function AllBooks() {
                   <option selected disabled>
                     Sort By
                   </option>
-                  <option value="lastDay">last day</option>
-                  <option value="lastSeven">last 7 days</option>
-                  <option value="lastMonth">last month</option>
-                  <option value="lastYear">last year</option>
+                  <option value="lastDay">registered in the last day</option>
+                  <option value="lastSeven">
+                    registered in the last 7 days
+                  </option>
+                  <option value="lastMonth">registered in thelast month</option>
+                  <option value="lastYear">registered in the last year</option>
                 </optgroup>
               </select>
               <IoIosArrowDown size={24} />
@@ -80,9 +79,8 @@ function AllBooks() {
             <table className="w-full text-left text-gray-500 rounded-md">
               <thead className="text-xs text-gray-700 uppercase bg-sage">
                 <tr>
-                  <th className="px-6 py-3">Title</th>
-                  <th className="px-6 py-3">Author</th>
-                  <th className="px-6 py-3">Genre</th>
+                  <th className="px-6 py-3">Email</th>
+                  <th className="px-6 py-3">Subscription</th>
                   <th className="px-6 py-3">Action</th>
                 </tr>
               </thead>
@@ -92,17 +90,17 @@ function AllBooks() {
                 {data.map((cell, i) => (
                   <tr key={i} className="bg-white border-b hover:bg-sage">
                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                      {cell.title}
+                      {cell.email}
                     </td>
-                    <td className="px-6 py-4">{cell.author}</td>
-                    <td className="px-6 py-4">{cell.genre}</td>
+                    <td className="px-6 py-4">{cell.subscription}</td>
+                    {/* <td className="px-6 py-4">{cell.genre}</td> */}
                     <td className="px-6 py-4 ">
                       <div className="flex gap-3">
                         <Link
                           href=""
                           className="font-medium hover:text-blue-600"
                         >
-                          Edit
+                          Disable
                         </Link>
                         <Link
                           href=""
@@ -186,6 +184,6 @@ function AllBooks() {
       </div>
     </div>
   );
-}
+};
 
-export default AllBooks;
+export default UserDetails;

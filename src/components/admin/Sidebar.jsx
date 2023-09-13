@@ -31,23 +31,31 @@ const Sidebar = () => {
         <div className="text-xl lg:text-2xl text-gray-700 grid grid-rows_[min-content] gap-6">
           <Logo />
           <hr className="text-white border-2"></hr>
-          <Link href="/add-book" className="flex gap-1">
+          <Link
+            href="/add-book"
+            className="flex gap-1 hover:bg-sage p-3 rounded-md"
+          >
             <IoMdBook />
             Add Book
           </Link>
-          <Link href="/all-books" className="flex gap-1">
+          <Link
+            href="/all-books"
+            className="flex gap-1 hover:bg-sage p-3 rounded-md"
+          >
             <GiBookshelf />
             All Books
           </Link>
-          <Link href="/user-details" className="flex gap-1">
+          <Link
+            href="/user-details"
+            className="flex gap-1 hover:bg-sage p-3 rounded-md"
+          >
             <PiFolderUserLight />
             User Details
           </Link>
-          <Link href="/subscriptions" className="flex gap-1">
-            <BsCalendarCheck />
-            Subscriptions
-          </Link>
-          <Link href="/settings" className="flex gap-1">
+          <Link
+            href="/settings"
+            className="flex gap-1 hover:bg-sage p-3 rounded-md"
+          >
             <SlSettings />
             Settings
           </Link>

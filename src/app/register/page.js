@@ -23,6 +23,7 @@ const RegisterPage = () => {
     // and redirect to your logged in page.
     if (password === confirmPassword) {
       const user = await auth.signup(email, password);
+      
       console.log(user);
       router.push("/login");
     } else setError("Password do not match");

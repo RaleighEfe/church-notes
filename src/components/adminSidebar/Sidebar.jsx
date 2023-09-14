@@ -32,28 +32,42 @@ const Sidebar = () => {
           <Logo />
           <hr className="text-white border-2"></hr>
           <Link
-            href="/add-book"
+            href="/admin-dashboard/add-book"
             className="flex gap-1 hover:bg-sage p-3 rounded-md"
           >
             <IoMdBook />
             Add Book
           </Link>
           <Link
-            href="/all-books"
+            href="/admin-dashboard/all-books"
             className="flex gap-1 hover:bg-sage p-3 rounded-md"
           >
             <GiBookshelf />
             All Books
           </Link>
           <Link
-            href="/user-details"
+            href="/admin-dashboard/user-details"
             className="flex gap-1 hover:bg-sage p-3 rounded-md"
           >
             <PiFolderUserLight />
             User Details
           </Link>
           <Link
-            href="/settings"
+            href="/admin-dashboard/category"
+            className="flex gap-1 hover:bg-sage p-3 rounded-md"
+          >
+            <PiFolderUserLight />
+            Category
+          </Link>
+          <Link
+            href="/admin-dashboard/news"
+            className="flex gap-1 hover:bg-sage p-3 rounded-md"
+          >
+            <PiFolderUserLight />
+            News/Postings
+          </Link>
+          <Link
+            href="/admin-dashboard/settings"
             className="flex gap-1 hover:bg-sage p-3 rounded-md"
           >
             <SlSettings />

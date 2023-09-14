@@ -1,4 +1,4 @@
-import AddBook from "../add-book/page";
+import AddBook from "../admin-dashboard/add-book/page";
 
 const Test = () => {
   return (

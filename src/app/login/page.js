@@ -12,7 +12,7 @@ const LoginPage = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const user_data = await auth.signIn(user);
-    router.push("/dashboard");
+    router.push("/user-dashboard/dashboard");
     console.log(user);
   };
   return (

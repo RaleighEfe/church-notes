@@ -5,7 +5,10 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 // Signup
 
@@ -35,11 +38,18 @@ const signIn = async (user) => {
     user.username,
     user.password
   );
-
   return userSignIn;
 };
 
 // user Authorization
+const Authentication = async (user) => {
+  const userAuth = await onAuthStateChanged(auth, user.user);
+    // const uid = user.uid;
+  return userAuth;
+};
+
+
+//sign out
 
 // Reset password
 
@@ -47,27 +57,8 @@ const authExports = {
   signup,
   signInWithGoogle,
   signIn,
+  Authentication,
 };
 
 export default authExports;
 
-//.then logic to handle error for user signup
-//   .then((result) => {
-//     // This gives you a Google Access Token. You can use it to access the Google API.
-//     const credential = GoogleAuthProvider.credentialFromResult(result);
-//     const token = credential.accessToken;
-//     // The signed-in user info.
-//     const user = result.user;
-//     // IdP data available using getAdditionalUserInfo(result)
-//     // ...
-//   })
-//   .catch((error) => {
-//     // Handle Errors here.
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // The email of the user's account used.
-//     const email = error.customData.email;
-//     // The AuthCredential type that was used.
-//     const credential = GoogleAuthProvider.credentialFromError(error);
-//     // ...
-//   });

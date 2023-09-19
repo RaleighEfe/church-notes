@@ -13,7 +13,7 @@ const LoginPage = () => {
     event.preventDefault();
     const user_data = await auth.signIn(user);
     router.push("/user-dashboard/dashboard");
-    console.log(user);
+    console.log(user_data);
   };
   return (
     <div className="bg-loginImage bg-cover bg-center h-screen p-4 grid items-center">
@@ -50,7 +50,10 @@ const LoginPage = () => {
               {/* <Buttons type="filled"></Buttons> */}
             </div>
           </form>
-          <div className="text-base sm:text-xl grid content-end lg:w-3/4">
+          <div className="grid text-base sm:text-xl lg:w-3/4">
+            <Link href="" className="text-gray-200 text-sm md:text-base">
+              Forgot password?
+            </Link>
             <Link
               href="/register/"
               className="text-gray-200 text-sm md:text-base"

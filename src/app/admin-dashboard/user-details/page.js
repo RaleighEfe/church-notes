@@ -1,11 +1,11 @@
 "use client";
-import Sidebar from "@/components/adminSidebar/Sidebar";
+import Sidebar from "@/components/molecules/Sidebar";
 import Link from "next/link";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { MyContext } from "@/MyContext";
+import { MyContext } from "@/UserContext";
 
 const UserDetails = () => {
   const [text, setText] = useState("");

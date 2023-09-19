@@ -10,6 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 // import { useAuth } from "../context/AuthUserContext";
 
 const RegisterPage = () => {
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -23,7 +24,7 @@ const RegisterPage = () => {
     // and redirect to your logged in page.
     if (password === confirmPassword) {
       const user = await auth.signup(email, password);
-      
+
       console.log(user);
       router.push("/login");
     } else setError("Password do not match");
@@ -45,6 +46,12 @@ const RegisterPage = () => {
 
           <form onSubmit={onSubmit}>
             <div className="grid gap-4 w-full">
+              <Input
+                type="text"
+                inputMode="text"
+                placeholder="Create username"
+                onChange={(event) => setUserName(event.target.value)}
+              />
               <Input
                 type="email"
                 inputMode="email"

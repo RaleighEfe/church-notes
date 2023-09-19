@@ -17,7 +17,7 @@ const HeroSection = () => {
           </Buttons>
         </div>
         <div className="text-center my-28">
-          <h1 className="text-2xl lg:text-4xl mb-5 font-light font-semibold ">
+          <h1 className="text-2xl lg:text-4xl mb-5 font-semibold ">
             Welcome to the BookCloset
           </h1>
           <p className="text-lg pb-10">

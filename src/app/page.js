@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <Cards header="Trending" />
-      <Cards header="Historical" /> 
+      <Cards header="Editors Pick" />
     </div>
   );
 }

@@ -1,9 +1,9 @@
-const EditorsPick = () => {
+const DisplayNews = () => {
   return (
     <div className="p-5 border rounded-md h-fit">
       <div className="grid grid-rows-2 gap-3">
         <h3 className="text-2xl sm:text-3xl grid content-center">
-          Unknown content
+          News Heading
         </h3>
         <p className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
@@ -15,4 +15,4 @@ const EditorsPick = () => {
   );
 };
 
-export default EditorsPick;
+export default DisplayNews;

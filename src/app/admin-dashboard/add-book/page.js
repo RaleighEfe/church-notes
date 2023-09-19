@@ -1,16 +1,22 @@
 "use client";
-import Sidebar from "@/components/adminSidebar/Sidebar";
+import Sidebar from "@/components/molecules/Sidebar";
 import Buttons from "@/components/atoms/Buttons";
 import Input from "@/components/atoms/Input";
 import Layout from "@/components/atoms/Layout";
-import { useState } from "react";
-import { MyContext } from "@/MyContext";
+import { useState, useEffect } from "react";
+import { MyContext } from "@/UserContext";
+import { storage } from "@/database/firebase-config";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+import { collection, addDoc } from "firebase/firestore";
 // import books from "../../database/services/books";
 
 const AddBook = () => {
   const [text, setText] = useState("");
+  const [bookCover, setBookCover] = useState(null);
+  const [audio, setAudio] = useState(null);
+  const [ebook, setEbook] = useState(null);
   const [formData, setFormData] = useState({
-    bookCover: "",
     date: "",
     bookTitle: "",
     author: "",
@@ -20,9 +26,22 @@ const AddBook = () => {
     audio: "",
     ebook: "",
   });
+  const imageUpload = () => {
+    if (imageUpload == null) return;
+    const imageRef = ref(storage, `images/${bookCover.name + v4()}`);
+    uploadBytes(imageRef, e.target.files[0]).then((data) => {
+      console.log(data, "imageRef");
+      getDownloadURL(data.ref).then((val) => {
+        setBookCover(val);
+      });
+    });
+  };
+
+  useEffect(() => {}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const valRef = collection(storage);
   };
   return (
     <div>
@@ -38,19 +57,16 @@ const AddBook = () => {
                     <Input
                       type="date"
                       onChange={(event) =>
-                        setFormData({
-                          ...formData,
-                          bookCover: event.target.value,
-                        })
+                        setFormData({ ...formData, date: event.target.value })
                       }
                     />
                     <Input
                       type="file"
                       accept="image/*"
                       placeholder="Upload book cover"
-                      onChange={(event) =>
-                        setFormData({ ...formData, date: event.target.value })
-                      }
+                      onChange={(event) => {
+                        setBookCover(event.target.files[0]);
+                      }}
                     />
                   </div>
                   <Input
@@ -133,9 +149,9 @@ const AddBook = () => {
                     <Input
                       type="file"
                       accept="audio/*"
-                      onChange={(event) =>
-                        setFormData({ ...formData, audio: event.target.value })
-                      }
+                      onChange={(event) => {
+                        setAudio(event.target.files[0]);
+                      }}
                     />
                   </div>
                   <div className="grid grid-cols-[auto_1fr] gap-3">
@@ -145,9 +161,9 @@ const AddBook = () => {
                     <Input
                       type="file"
                       inputMode=""
-                      onChange={(event) =>
-                        setFormData({ ...formData, ebook: event.target.value })
-                      }
+                      onChange={(event) => {
+                        setEbook(event.target.files[0]);
+                      }}
                     />
                   </div>
                 </div>

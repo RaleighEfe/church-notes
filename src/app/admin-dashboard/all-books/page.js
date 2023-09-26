@@ -5,7 +5,8 @@ import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { MyContext } from "@/UserContext";
+import { UserContext } from "@/UserContext";
+import AdminHeader from "@/components/molecules/AdminHeader";
 
 function AllBooks() {
   const [text, setText] = useState("");
@@ -28,7 +29,8 @@ function AllBooks() {
   ];
   return (
     <div>
-      <MyContext.Provider value={{ text, setText }}>
+      <UserContext.Provider value="">
+        <AdminHeader />
         <div className="grid grid-cols-[auto_1fr]">
           <Sidebar />
 
@@ -189,7 +191,7 @@ function AllBooks() {
             </div>
           </div>
         </div>
-      </MyContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }

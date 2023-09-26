@@ -8,16 +8,29 @@ import { BsBookmarkDash } from "react-icons/bs";
 import { SlSettings } from "react-icons/sl";
 import { BiLogOut, BiNews } from "react-icons/bi";
 import { IoMdBook } from "react-icons/io";
+import clsx from "clsx";
 import Logo from "../atoms/Logo";
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
       <div className="h-full">
-        <button className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ">
-          <span className="sr-only">Open sidebar</span>
-          <RxHamburgerMenu />
-        </button>
+        <div
+          className={`bg-gray-900 text-white h-screen w-64 ${
+            isOpen ? "translate-x-0" : "-translate-x-64"
+          } fixed top-0 left-0 transition-transform duration-300 ease-in-out`}
+        >
+          <button className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ">
+            <span className="sr-only">Open sidebar</span>
+            {isOpen ? <RxHamburgerMenu /> : <div></div>}
+          </button>
+        </div>
+
         <aside className="relative w-72 h-full ">
           <div className="h-full px-3 py-4 overflow-y-auto bg-adminBg bg-cover">
             <ul className="space-y-2 text-2xl">

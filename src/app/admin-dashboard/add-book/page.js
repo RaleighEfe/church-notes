@@ -4,11 +4,12 @@ import Buttons from "@/components/atoms/Buttons";
 import Input from "@/components/atoms/Input";
 import Layout from "@/components/atoms/Layout";
 import { useState, useEffect } from "react";
-import { MyContext } from "@/UserContext";
+import { UserContext } from "@/UserContext";
 import { storage } from "@/database/firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import { collection, addDoc } from "firebase/firestore";
+import SubHeadText from "@/components/atoms/SubHeadText";
 // import books from "../../database/services/books";
 
 const AddBook = () => {
@@ -45,7 +46,7 @@ const AddBook = () => {
   };
   return (
     <div>
-      <MyContext.Provider value={{ text, setText }}>
+      <UserContext.Provider value="">
         <div className="grid grid-cols-[auto_1fr]">
           <Sidebar />
           <Layout>
@@ -174,7 +175,7 @@ const AddBook = () => {
             </div>
           </Layout>
         </div>
-      </MyContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { MyContext } from "@/UserContext";
+import { UserContext } from "@/UserContext";
 
 const UserDetails = () => {
   const [text, setText] = useState("");
@@ -25,7 +25,7 @@ const UserDetails = () => {
   ];
   return (
     <div>
-      <MyContext.Provider value={{ text, setText }}>
+      <UserContext.Provider value="">
         <div className="grid grid-cols-[auto_1fr]">
           <Sidebar />
 
@@ -191,7 +191,7 @@ const UserDetails = () => {
             </div>
           </div>
         </div>
-      </MyContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 };
